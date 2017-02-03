@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 3-feb-2017, 0.03.01
+    Author     : leona
+*/
+
+#errorpwd {
+    font-size: 12px;
+    display: block;
+    color: red;
+}
+
+#five {
+    width: 500px;
+    margin: 10% auto;
+    display: block;
+}
+
+#fourth {
+    width: 220px;
+    display: block;
+    margin: 0 auto;
+}
+
+h3 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: -1px;
+    margin: 0;
+}

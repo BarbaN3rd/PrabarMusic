@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Prabar Music - Login</title>
+    </head>
+    <body>
+        <link rel="stylesheet" href="style_dir/style_global.css" >
+        <link rel="stylesheet" href="style_dir/style_login.css" >
+        <div id="first">
+            <div id="third"> 
+                <h1>PRABAR MUSIC</h1>
+                <p class="info">
+                    PRABAR MUSIC è una piattaforma per il nolleggio gratuito di brani di ultima generazione.
+                </p>
+                 <p class="info">
+                    Con un account registrato potrai sia caricare nuovi brani per gli altri utenti sia potrai
+                    nolleggiare tutti i brani disponibili per 30 giorni, al termine dei quali il brano verrà automaticamente
+                    reso nuovamente disponibile al nolleggio agli altri utenti registrati.
+                </p>
+                <p class="info copy">
+                    PRABAR MUSIC 2017 - 
+                    Tutti i diritti riservati ©
+                    
+                </p>
+            </div>
+            
+            <div id="second">
+                <span class="norm">USA IL TUO ACCOUNT PRABAR MUSIC</span>
+                <form action="autentica.php" method="post">
+                    <label for='nomeutente'>Nome utente</label>
+                    <input type='text' name='nomeutente' />
+
+                    <label for='password'>Password</label>
+                    <input type='password' name='password'/>
+                    <a href="#" class="lostpwd">Password dimenticata?</a>
+                    <input style="display: inline-block;" type='submit' value='Entra' />
+                    <input value="oks" name="mantieni" style="vertical-align: middle" type="checkbox"><label style="display: inline-block; text-transform: none">Ricordami</label>
+                    <a href="signup.php" class="new-account">CREA UN NUOVO ACCOUNT</a>
+                </form>
+
+            </div>
+        </div>
+    </body>
+</html>

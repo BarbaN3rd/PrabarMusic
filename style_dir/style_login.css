@@ -1,0 +1,106 @@
+body {
+    background-color: #1f1f1f;
+    font-family: 'Roboto';
+}
+
+#first {
+    margin: 15% auto;
+    width: 720px;
+    display: block;
+}
+
+#second {
+    width: 225px;
+    display: block;
+    float: right;
+    margin-top: 30px;
+}
+
+#third {
+    float: left;
+    width: 450px;
+    height: 235px;
+    border-right: 2px solid #313131;
+    padding-right: 10px;
+}
+
+#third h1, h1 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -1px;
+}
+
+#third .info, .info {
+    color: #fff;
+    letter-spacing: -1px;
+    font-size: 14px;
+}
+
+.copy {
+    font-size: 12px !important;
+}
+
+input[type="text"], input[type="password"] {
+    font-family: 'Roboto';
+    border: 2px solid #eaeaea;
+    font-size: 13px;
+    margin: 3px 0 6px 0;
+    height: 25px;
+    width: 220px;
+}
+
+input[type="text"]:focus , input[type="password"]:focus {
+    box-shadow: 0 0 2px 3px #56e12b;
+}
+
+label {
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-size: 12px;
+    display: block;
+    color: #bababa;
+}
+
+.lostpwd {
+    font-size: 12px;
+    display: block;
+    text-decoration: none;
+    color: #bababa;
+    letter-spacing: -1px;
+} .lostpwd:hover {color: #fff; text-decoration: underline;}
+
+input[type="submit"] {
+    background-color: #56e12b;
+    color: white;
+    font-size: 14px;
+    font-family: 'Roboto';
+    border: 0;
+    width: 70px;
+    height: 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-top: 5px;
+    display: block;
+} input[type="submit"]:hover {background-color: #5aea2e}
+
+.new-account {
+    font-size: 11px; 
+    color: #56e12b; 
+    text-decoration: none; 
+    letter-spacing: -1px; 
+    margin: 8px 0 3px 0; 
+    display: block;
+}
+
+.new-account:hover {color: #fff;}
+
+.norm {
+    color: #fff; 
+    font-size: 13px; 
+    letter-spacing: -1px;
+    display: block;
+    margin-bottom: 10px;
+}
+

@@ -1,0 +1,149 @@
+body {
+	margin: 0;
+	background: linear-gradient(to bottom, rgba(56,56,56,1) 0%, rgba(56,56,56,1) 31%, rgba(184,184,184,1) 100%);
+}
+
+.header {
+	background-color: #000;
+	border-bottom: 2px solid #abd636;
+	display: inline-block;
+	width: 100%;
+	height: 30px;
+	font-family: 'Fira Sans Condensed', Helvetica, Arial, sans-serif;
+}
+
+.nav-wrapper {
+	width: 980px;
+	margin: 0 auto;
+	height: 30px;
+}
+
+
+.site-nav {
+	height: 100%;
+	float: left;
+}
+
+.site-nav ul {
+	padding: 0;
+	margin: 0;
+	height: 40px;
+	display: inline-block;
+}
+
+.site-nav .nav-item {
+	height: 30px;
+	line-height: 30px;
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+	float: left;
+	border-right: 1px dotted #404040;
+	display: inline-block;
+	min-width: 75px;
+	text-align: center;
+} 
+
+.nav-wrapper .nav-item a {
+	font-size: 12px;
+	font-weight: 400;
+	color: #fff;
+	text-decoration: none;
+} 
+
+.nav-wrapper .nav-item a:hover {
+	border-bottom: 1px dotted #abd636;
+}
+
+.nav-wrapper .nav-item.selected a {
+	color: #3a3635;
+}
+
+.site-nav .nav-item:first-child {border-left: 1px dotted #404040;}
+
+.site-nav .nav-item.selected {
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.27,#a8e00f),color-stop(0.64,#abd636),color-stop(0.82,#cded74));
+	border: none;
+	height: 28px;
+	border-radius: 3px 3px 0 0;
+	margin-top: 2px;
+	}
+
+.account-nav {
+	float: right;
+	height: 30px;
+	line-height: 30px;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+#container {
+	background-color: #fff;
+	width: 980px;
+	margin: 10px auto;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	letter-spacing: -1px;
+}
+
+.mostra a {
+	display: none;
+}
+
+
+.mostra:hover a {
+	display: inline-block;
+}
+
+table {
+	background-color: #efefef;
+	margin: 0 15px 15px 15px;
+	display: inline-block;
+	width: auto;
+}
+
+table td {
+	border-bottom: 1px dotted #ccc;
+	min-width: 65px;
+}
+
+.number {
+	text-align: center;
+	font-size: 40px;
+	color: #ccc;
+}
+
+.add {
+	width: 20px;
+	height: 20px;
+	background-image: url("../images/add.png");
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+}
+
+.not-aviable span {
+    display: none;
+}
+
+.mostra:hover .not-aviable {display: inline-block;}
+
+.not-aviable {
+    background-image: url('../images/not-aviable.png');
+    background-size: 20px 20px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.not-aviable:hover span {
+    display: inline-block;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    top: -20px;
+    left: -45px;
+    width: 125px;
+    font-size: 12px;
+    border-radius: 2px;
+}
