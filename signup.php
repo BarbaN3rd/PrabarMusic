@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+header('Content-Type: text/html; charset=utf-8');
+
 include("utility.php");
 
 if (isLogged()) {
@@ -16,6 +18,22 @@ if (isLogged()) {
             label {margin-top: 5px;}
             h1 {text-align: center;}
             hr {border-color: #393939}
+            
+            #ok {display: none; font-size: 12px;}
+            
+            img {
+                height: 40px;
+                width: 40px;
+                vertical-align: middle;
+                margin-right: 15px;
+            }
+            
+            #container {
+                font-size: 18px;
+                letter-spacing: -1px;
+                margin-top: 30px;
+                text-align: center;
+            }
 
 
         </style>
@@ -24,9 +42,6 @@ if (isLogged()) {
         <link rel="stylesheet" href="style_dir/style_signup.css">
         <link rel="stylesheet" href="style_dir/style_global.css" >
         <link rel="stylesheet" href="style_dir/style_login.css" >
-        <style>
-            #ok {display: none; font-size: 12px;}
-        </style>
         <script>
             function controllapwd() {
                 pass1 = document.getElementById("passwd1").value;
@@ -43,7 +58,7 @@ if (isLogged()) {
             <h1>Crea un account PRABAR MUSIC</h1>
             <p class="info">
                 Non sei cliente di PRABAR MUSIC? Registra un account adesso. La registrazione richiede pochi secondi
-                e ti permette di aggiungere nuovi brani alla raccolta e la possibilità di nolleggiare i brani messi a disposizione
+                e ti permette di aggiungere nuovi brani alla raccolta e la possibilità di noleggiare i brani messi a disposizione
                 dagli altri utenti registrati.
             </p>
             <p class="info">
@@ -75,6 +90,8 @@ if (isLogged()) {
         </div>
 
         <?php
+        require 'dbconnection.php';
+
         $password = $_POST["pass1"];
         $password2 = $_POST["pass2"];
         $nickname = $_POST["nickname"];
@@ -85,20 +102,30 @@ if (isLogged()) {
 
             if ($password == $password2) {
 
-                require 'dbconnection.php';
-
                 $datai = date("Y/m/d");
 
                 if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
+                   echo "<div id='container'><img src='images/not.png'><span class='bold'>Errore di connessione con il database</span>. Ritenta tra qualche minuto.</div>";
                 }
 
                 $sql = "INSERT INTO Utente VALUES ('$nickname','$nome','$cognome','$datai','$password');";
-                echo $sql;
                 $risposta = $conn->query($sql);
                 if (!$risposta) {
-                    echo $conn->error;
+                    echo "<div id='container'><img src='images/not.png'><span class='bold'>Nome utente già utilizzato</span>. Ritenta utilizzandone uno diverso.</div>";
+                    exit();
                 }
+                /* creiamo le cartelle dedicate all'utente */
+                mkdir("songs/" . $nickname);
+                mkdir("songs/" . $nickname . "/music");
+                /* ritorniamo alla pagina di login per effettuare il login */
+                echo "<div id='container'><img src='images/ok.png'><span class='bold'>Account creato con successo</span>. Ora verrai reindirizzato alla pagina di login.</div>
+                <script>
+                    setTimeout(function () {
+                        window.location.href='login.html';
+                    }, 5000);
+                </script>";
+            } else {
+                echo "<div id='container'><img src='images/not.png'><span class='bold'>Le due password non coincidono</span>. Puoi ritentare nuovamente.</div>";
             }
         }
         ?>

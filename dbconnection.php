@@ -1,5 +1,5 @@
 <?php
-
+header('Content-Type: text/html; charset=utf-8');
 $servername = "localhost";
 $username = "prabarmusic2017";
 $password = "";

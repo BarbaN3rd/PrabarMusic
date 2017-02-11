@@ -1,0 +1,65 @@
+.modal-changeInfo,  .modal-changePwd  {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content-changeInfo, .modal-content-changePwd {
+    background-color: #fefefe;
+    margin: 7% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 720px; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close-changeInfo, .close-changePwd {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-changeInfo:hover,
+.close-changeInfo:focus, .close-changePwd:hover,
+.close-changePwd:focus  {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.box-botton {
+    background-color: #ececec;
+    padding: 4px 4px;
+    border-radius: 2px;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    
+} 
+
+.modify {
+    background-color: #3a3a3a;
+    font-size: 10pt;
+    padding: 3px;
+    letter-spacing: -1px;
+    font-weight: 400;
+    color: #fff;
+    font-family: 'Roboto';
+    border: 1px solid #4d4d4d;
+    display: inline-block;
+    text-decoration: none;
+    /*box-shadow: inset 0 0 2px 1px rgba(49, 49, 49, 1), 0 0 2px rgba(0, 0, 0, 0.2);*/
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    margin-right: 2px;
+    transition: all 0.5s ease;
+    border-radius: 2px;
+} .modify:last-child {margin-right: 0; border-radius: 0 2px 2px 0} .modify:hover, .active {background-color: #f4f4f4; color: #222222; border: 1px solid #fff;}
+
+.modify:first-child {border-radius: 2px 0 0 2px;}

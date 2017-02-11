@@ -5,7 +5,7 @@ session_start();
 require 'dbconnection.php';
 
 $idbrano = $_POST['brano'];
-$nUtente = $_SESSION['loggin_prabarmusic']['NomeUtente'];
+$nUtente = $_SESSION['prabarmusic']['NomeUtente'];
 
 $data = date('Y-m-d');
 

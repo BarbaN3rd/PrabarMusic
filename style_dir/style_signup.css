@@ -16,7 +16,8 @@ and open the template in the editor.
 
 #five {
     width: 500px;
-    margin: 10% auto;
+    margin: 0 auto;
+    margin-top: 5%;
     display: block;
 }
 

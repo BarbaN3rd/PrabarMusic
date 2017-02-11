@@ -2,7 +2,10 @@
 
 session_start();
 
+header('Content-Type: text/html; charset=utf-8');
+
 ?>
+
 <html>
     <head>
         <title>Prabar Music</title>
@@ -16,13 +19,14 @@ session_start();
             <div class="nav-wrapper">
                 <div class="site-nav">
                     <ul>
-                        <li class="nav-item selected"><a href="#">Prabar Music</a></li>
+                        <li class="nav-item selected"><a class="bold" href="#">Prabar Music</a></li>
                         <li class="nav-item"><a href="#">Brani</a></li>
-                        <li class="nav-item"><a href="#">Account</a></li>
                         <?php
                         
                         include("utility.php");
                         if (isLogged()) {
+                            echo "<li class='nav-item'><a href='profile.php'>Account</a></li>";
+                            echo "<li class='nav-item'><a href='upload.php'>Carica</a></li>";
                             echo "<li class='nav-item'><a href='logout.php'>Logout</a></li>";
                         } 
                         else 
@@ -51,10 +55,10 @@ session_start();
             $sql = "SELECT * FROM Brani";
             $result = $conn->query($sql);
             echo "<div class='titletop'>Le nostre canzoni</div>";
-            echo "<table>";
+            echo "<table class='songs'>";
             $i = 1;
             while ($riga = $result->fetch_assoc()) {
-                echo "<tr class='mostra'><td class='number'>" . $i . "<td><span style='font-weight: 700'>" . $riga["Titolo"] . "</span>
+                echo "<tr class='mostra'><td class='number'>" . $i . "<td><img class='cover' src='songs/cover/martin_garrix_animals.png'><td><span style='font-weight: 700'>" . $riga["Titolo"] . "</span>
 			<br><span style='font-size: 12px'>" .
                 $riga["Autore"] . "</span>" .
                 "<br><span style='font-size: 13px; font-style: italic;'>
@@ -68,7 +72,7 @@ session_start();
                 } elseif ((isLogged()) && ($riga['Disponibilita'] == 1)) {
                     echo "<td class='" . $riga['IDBrano'] . "' style='text-align: center;'><div class='not-aviable'><span>Brano già nolleggiato</span></div></td></tr>";
                 } else {
-                    echo "<td>Per aggiungere un brano devi essere registrato e connesso</td>";
+                    echo "<td><span class='small'>Per noleggiare un brano devi essere registrato e connesso</span></td>";
                 }
                 $i++;
             }
